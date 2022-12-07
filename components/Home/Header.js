@@ -3,7 +3,7 @@ import {Image, View, StyleSheet, TouchableOpacity, Text} from 'react-native';
 import Octicons from 'react-native-vector-icons/Octicons';
 import Feather from 'react-native-vector-icons/Feather';
 
-function Header(props) {
+function Header({navigation}) {
   const size = 24;
   return (
     <View style={styles.container}>
@@ -13,7 +13,7 @@ function Header(props) {
         {/*  */}
       </TouchableOpacity>
       <View style={styles.iconContaierr}>
-        <TouchableOpacity>
+        <TouchableOpacity onPress={() => navigation.push('NewPostScreen')}>
           <Octicons name="diff-added" size={size} style={styles.icon} />
         </TouchableOpacity>
         <TouchableOpacity>

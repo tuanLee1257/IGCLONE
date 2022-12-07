@@ -1,14 +1,20 @@
 import React from 'react';
 import {View, Text, StyleSheet, TouchableOpacity} from 'react-native';
 import Icon from 'react-native-vector-icons/Ionicons';
+import FormikPostUploader from './FormikPostUploader';
 
-function AddNewPost(props) {
-  return <Header />;
+function AddNewPost({navigation}) {
+  return (
+    <View style={styles.container}>
+      <Header navigation={navigation} />
+      <FormikPostUploader navigation={navigation} />
+    </View>
+  );
 }
-function Header(props) {
+function Header({navigation}) {
   return (
     <View style={styles.headerContainer}>
-      <TouchableOpacity>
+      <TouchableOpacity onPress={() => navigation.goBack()}>
         <Icon name="chevron-back" color={'#fff'} size={30} />
       </TouchableOpacity>
       <Text style={styles.headerText}>NEW POST</Text>

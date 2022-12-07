@@ -29,7 +29,7 @@ function PostHeader({post}) {
   return (
     <View style={styles.post}>
       <View style={{flexDirection: 'row', alignItems: 'center'}}>
-        <Image style={styles.story} source={post.profile_picture} />
+        <Image style={styles.story} source={{uri: post.profile_picture}} />
         <Text style={{color: 'white', marginLeft: 5, fontWeight: '600'}}>
           {post.user}
         </Text>
@@ -40,9 +40,9 @@ function PostHeader({post}) {
 }
 function PostImage({post}) {
   return (
-    <View style={{width: '100%', height: 2650}}>
+    <View style={{width: '100%', height: 450}}>
       <Image
-        source={post.image}
+        source={{uri: post.imageURL}}
         style={{flex: 1, width: '100%', height: '100%', resizeMode: 'cover'}}
       />
     </View>

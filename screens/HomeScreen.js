@@ -7,10 +7,10 @@ import Stories from '../components/Home/Stories';
 import BottomTabIcons from '../data/BottomTabIcons';
 import posts from '../data/posts';
 
-function HomeScreen(props) {
+function HomeScreen({navigation}) {
   return (
     <SafeAreaView style={styles.container}>
-      <Header />
+      <Header navigation={navigation} />
       <Stories />
       <ScrollView>
         {posts.map((story, index) => (
